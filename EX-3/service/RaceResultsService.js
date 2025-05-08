@@ -69,8 +69,8 @@ export class RaceResultsService {
    */
   getTotalTimeForParticipant(participantId) {
     const selectedResults = this._raceResults.filter(result => result.participant_id === participantId);
-    if (selectedResults.length === 0) return new Duration(0);
-    const totalSeconds = selectedResults.reduce((sum, result) => sum + result.time._totalSeconds, 0);
-    return new Duration(totalSeconds);
+    let totalDuration = new Duration(0);
+    selectedResults.forEach(result => {totalDuration = totalDuration.plus(result.time)});
+    return totalDuration;
   }
 }
