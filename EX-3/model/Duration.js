@@ -38,13 +38,13 @@ export class Duration {
    * @param {Duration} other - Another duration to add.
    * @returns {Duration} A new Duration representing the sum.
    */
-  plus = (other) => {
+  plus(other) {
          // YOUR CODE
          return new Duration(this._totalSeconds + other._totalSeconds);
   };
 
   // YOUR COMMENT
-  minus = (other) => {
+  minus(other) {
          // YOUR CODE
          return new Duration(this._totalSeconds - other._totalSeconds);
   };
@@ -53,7 +53,7 @@ export class Duration {
    * Converts the duration into a human-readable string, e.g., "2m 30s".
    * @returns {string} The formatted duration string.
    */
-  toString = () => {
+  toString() {
         // YOUR CODE
         const minutes = Math.floor(this._totalSeconds / 60);
         const seconds = this._totalSeconds % 60;

@@ -59,7 +59,7 @@ export class RaceResultsService {
    */
   getTimeForParticipant(participantId, sport) {
     const selectedResult = this._raceResults.find(result => result.participant_id === participantId && result.sport === sport);
-    return selectedResult ? result.time : null;
+    return selectedResult ? new Duration(selectedResult.time._totalSeconds) : null;
   }
 
   /**
@@ -70,7 +70,7 @@ export class RaceResultsService {
   getTotalTimeForParticipant(participantId) {
     const selectedResults = this._raceResults.filter(result => result.participant_id === participantId);
     if (selectedResults.length === 0) return new Duration(0);
-    const totalSeconds = selectedResults.reduce((sum, result) => sum + result.time.totalSeconds, 0);
+    const totalSeconds = selectedResults.reduce((sum, result) => sum + result.time._totalSeconds, 0);
     return new Duration(totalSeconds);
   }
 }
