@@ -43,7 +43,11 @@ export default class Duration {
          return new Duration(this._totalSeconds + other._totalSeconds);
   };
 
-  // YOUR COMMENT
+  /**
+   * Returns a new Duration by subtracting another duration.
+   * @param {Duration} other - Another duration to subtract.
+   * @returns {Duration} A new Duration representing the difference.
+   */
   minus = (other) => {
          // YOUR CODE
          return new Duration(this._totalSeconds - other._totalSeconds);
