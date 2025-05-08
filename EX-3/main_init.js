@@ -10,8 +10,8 @@ raceResultService.addRaceResult(new RaceResult("participant1", "run",  Duration.
 raceResultService.addRaceResult(new RaceResult("participant2", "swim",  Duration.fromMinutesAndSeconds(3, 15)));
 
 // Save results to file
-raceResultService.saveToFile("./data/raceScores.json");
+raceResultService.saveToFile("EX-3/data/raceScores.json");
 
 // Write the total time for participant 1
-console.log(raceResultService.getTotalTimeForParticipant("participant1").toString());       // Expected : 4m 15s  
+console.log(raceResultService.getTotalTimeForParticipant("participant1").toString());     // Expected : 4m 15s  
 
